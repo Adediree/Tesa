@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import '../styles/variables.css';
+@import '../styles/reset.css';
+
+body {
+  font-size: var(--font-size-base);
+}
+
+body[data-font-size='small'] {
+  --font-size-base: 0.875rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.125rem;
+  --font-size-2xl: 1.25rem;
+  --font-size-3xl: 1.5rem;
+  --font-size-4xl: 1.875rem;
+}
+
+body[data-font-size='large'] {
+  --font-size-base: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 3rem;
+}
+
+body[data-font-family='serif'] {
+  --font-family-primary: var(--font-family-secondary);
+}
+
+body[data-font-family='mono'] {
+  --font-family-primary: var(--font-family-mono);
+}

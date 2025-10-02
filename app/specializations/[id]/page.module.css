@@ -1,0 +1,89 @@
+.container {
+  padding-top: var(--spacing-12);
+  padding-bottom: var(--spacing-20);
+  padding-left: var(--spacing-12);
+  padding-right: var(--spacing-12);
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding-bottom: var(--spacing-12);
+}
+
+.heroImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+}
+
+.pathways {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.pathway {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.pathwayHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.coursesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .coursesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.courseCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.courseImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.courseContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  flex: 1;
+}
+
+.courseMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
