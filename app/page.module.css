@@ -17,8 +17,8 @@
 }
 
 .heroTitle {
-  margin: auto !important;
-  max-width: 800px !important;
+  /* margin: auto !important; */
+  /* max-width: 800px !important; */
   margin-bottom: var(--spacing-10);
   padding-bottom: var(--spacing-4);
   /* border: 1px solid yellow; */
