@@ -1,9 +1,14 @@
 .container {
   padding-top: var(--spacing-12);
   padding-bottom: var(--spacing-20);
+  /* padding-left: var(--spacing-12); */
+  /* padding-right: var(--spacing-12); */
+  min-height: 100vh;
+}
+
+.overallContainer {
   padding-left: var(--spacing-12);
   padding-right: var(--spacing-12);
-  min-height: 100vh;
 }
 
 .hero {
@@ -92,4 +97,9 @@
 .enrollCard {
   position: sticky;
   top: var(--spacing-20);
+}
+
+.programmeSelector {
+  display: flex;
+  gap: 16px;
 }

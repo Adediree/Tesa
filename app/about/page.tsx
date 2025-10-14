@@ -3,35 +3,41 @@ import { Container } from "@/components/layout/Container";
 import { Typography } from "@/components/base/Typography";
 import { Card } from "@/components/base/Card";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
-import ProgramLayout, { ProgramLayoutProps } from "@/components/layout/ProgramLayout/ProgramLayout";
+import ProgramLayout, {
+  ProgramLayoutProps,
+} from "@/components/layout/ProgramLayout/ProgramLayout";
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 
 export default function AboutPage() {
-const programLayoutProps: ProgramLayoutProps = {
+  const programLayoutProps: ProgramLayoutProps = {
     title: "Certifications",
     subtitle:
       "Validate your skillset with Univaciti certification courses. Specializations are in cloud engineering, cloud solutions architecture, software engineering, AI Solution",
-      text:"Select a specialization to view the details",
+    text: "Select a specialization to view the details",
   };
 
   const data = [
     {
+      id: "artificial",
       title: "Artificial Intelligence",
       description: "Learn the foundations of AI and build smart systems.",
       image: "/images/ai.jpg",
     },
     {
+      id: "artificial",
+
       title: "Data Analytics",
       description: "Master data visualization, SQL, and reporting tools.",
       image: "/images/data.jpg",
     },
     {
+      id: "artificial",
+
       title: "Software Engineering",
       description: "Design and develop scalable web applications.",
       image: "/images/software.jpg",
     },
   ];
-
 
   // const values = [
   //   {
@@ -63,8 +69,8 @@ const programLayoutProps: ProgramLayoutProps = {
   return (
     <>
       <ProgramLayout {...programLayoutProps}>
-            <ProgramCard specializations={data} />
-          </ProgramLayout>
+        <ProgramCard specializations={data} />
+      </ProgramLayout>
       {/* <Header />
       <main
         style={{

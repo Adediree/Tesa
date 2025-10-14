@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Card } from "@/components/base/Card";
-import styles from "./ProgramCard.module.css";
 import { Typography } from "@/components/base/Typography";
+import { Button } from "@/components/base/Button";
+import styles from "./ProgramCard.module.css";
 
 interface Program {
+  id?: string;
   title: string;
   description: string;
   image: string;
@@ -13,10 +16,16 @@ interface Program {
 
 interface ProgramCardProps {
   specializations: Program[];
+  showButton?: boolean;
+  buttonText?: string;
+  onButtonClick?: (id: string) => void; // 👈 optional callback
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
   specializations,
+  showButton = false,
+  buttonText = "Learn More",
+  onButtonClick,
 }) => {
   return (
     <div className={styles.specializationsGrid}>
@@ -49,6 +58,19 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
               {spec.description}
             </Typography>
           </Card.Body>
+
+          {/* 👇 Optional button section */}
+          {showButton && (
+            <Card.Footer>
+              <Button
+                variant="outline"
+                fullWidth
+                onClick={() => onButtonClick?.(spec.id!)} // ✅ triggers callback if provided
+              >
+                {buttonText}
+              </Button>
+            </Card.Footer>
+          )}
         </Card>
       ))}
     </div>

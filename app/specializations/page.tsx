@@ -1,21 +1,16 @@
 "use client";
 
-
+import { useRouter } from "next/navigation";
 import { useGetSpecializationsQuery } from "@/lib/api/catalogApi";
-// import { ROUTES } from "@/constants/routes";
-// import styles from "./page.module.css";
 import ProgramLayout, {
   ProgramLayoutProps,
 } from "@/components/layout/ProgramLayout/ProgramLayout";
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
-
-// const iconMap: Record<string, React.ReactNode> = {
-//   "Artificial Intelligence": <Brain size={40} />,
-//   "Data Analytics": <BarChart3 size={40} />,
-//   "Software Engineering": <Rocket size={40} />,
-// };
+import { ROUTES } from "@/constants/routes";
 
 export default function SpecializationsPage() {
+  const router = useRouter();
+
   const programLayoutProps: ProgramLayoutProps = {
     title: "Learning Program",
     subtitle:
@@ -23,29 +18,44 @@ export default function SpecializationsPage() {
   };
 
   const { data: specializations, isLoading } = useGetSpecializationsQuery();
+
   const data = [
     {
-      title: "Artificial Intelligence",
+      id: "tesa",
+      title: "Tesa",
       description: "Learn the foundations of AI and build smart systems.",
       image: "/images/ai.jpg",
     },
     {
+      id: "data-analytics",
       title: "Data Analytics",
       description: "Master data visualization, SQL, and reporting tools.",
       image: "/images/data.jpg",
     },
     {
+      id: "software-engineering",
       title: "Software Engineering",
       description: "Design and develop scalable web applications.",
       image: "/images/software.jpg",
     },
   ];
 
+  // 👇 callback to handle navigation
+  const handleNavigateToSpecialization = (id: string) => {
+    router.push(ROUTES.CATALOG.SPECIALIZATION_DETAIL(id));
+  };
+
   return (
-    <>
-      <ProgramLayout {...programLayoutProps}>
-        <ProgramCard specializations={data} />
-      </ProgramLayout>
+    <ProgramLayout {...programLayoutProps}>
+      <ProgramCard
+        specializations={data}
+        showButton={true}
+        buttonText="Explore Course"
+        onButtonClick={handleNavigateToSpecialization} // ✅ added this
+      />
+    </ProgramLayout>
+  );
+}
       {/* <Header />
       <main className={styles.container}>
         <Container>
@@ -101,6 +111,4 @@ export default function SpecializationsPage() {
           )}
         </Container>
       </main> */}
-    </>
-  );
-}
+    

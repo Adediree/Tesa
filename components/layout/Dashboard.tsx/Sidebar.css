@@ -1,0 +1,81 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 250px;
+  width: 200px;
+  padding-left: 16px;
+}
+
+.nav-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navbar-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-radius: 6px;
+  border-style: none;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  width: 180px;
+  color: #4b5563;
+  transition: all 0.3s ease;
+}
+
+.nav-button-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.nav-title {
+  font-size: 0.8175rem;
+  font-weight: 600;
+  color: #a2aab5;
+}
+
+.title-container {
+  padding: 12px;
+}
+
+.title-text {
+  padding-left: 12px;
+}
+
+/* ✅ Active button style */
+.nav-buttons.active {
+  background-color: #1098f7; /* requested blue color */
+  color: white; /* make text white */
+  border-radius: 8px;
+}
+
+/* ensure text inside button also becomes white when active */
+.nav-buttons.active .nav-button-text {
+  color: white;
+}
+
+/* Hover state for inactive buttons */
+.nav-buttons:hover {
+  background-color: #1b212c;
+  color: white;
+}
+
+/* Keep active button blue even on hover */
+.nav-buttons.active:hover {
+  background-color: #1098f7;
+  color: white;
+  cursor: pointer;
+}
