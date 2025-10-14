@@ -3,38 +3,69 @@ import { Container } from "@/components/layout/Container";
 import { Typography } from "@/components/base/Typography";
 import { Card } from "@/components/base/Card";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
+import ProgramLayout, { ProgramLayoutProps } from "@/components/layout/ProgramLayout/ProgramLayout";
+import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 
 export default function AboutPage() {
-  const values = [
+const programLayoutProps: ProgramLayoutProps = {
+    title: "Certifications",
+    subtitle:
+      "Validate your skillset with Univaciti certification courses. Specializations are in cloud engineering, cloud solutions architecture, software engineering, AI Solution",
+      text:"Select a specialization to view the details",
+  };
+
+  const data = [
     {
-      icon: <Target size={40} />,
-      title: "Our Mission",
-      description:
-        "To democratize high-quality education in AI, Data Analytics, and Software Engineering, making it accessible to learners worldwide.",
+      title: "Artificial Intelligence",
+      description: "Learn the foundations of AI and build smart systems.",
+      image: "/images/ai.jpg",
     },
     {
-      icon: <Users size={40} />,
-      title: "Expert Instructors",
-      description:
-        "Learn from industry professionals with years of real-world experience in their respective fields.",
+      title: "Data Analytics",
+      description: "Master data visualization, SQL, and reporting tools.",
+      image: "/images/data.jpg",
     },
     {
-      icon: <Award size={40} />,
-      title: "Quality Content",
-      description:
-        "Comprehensive, up-to-date curriculum designed to prepare you for real-world challenges.",
-    },
-    {
-      icon: <TrendingUp size={40} />,
-      title: "Career Growth",
-      description:
-        "Gain the skills and credentials needed to advance your career in high-demand tech fields.",
+      title: "Software Engineering",
+      description: "Design and develop scalable web applications.",
+      image: "/images/software.jpg",
     },
   ];
 
+
+  // const values = [
+  //   {
+  //     icon: <Target size={40} />,
+  //     title: "Our Mission",
+  //     description:
+  //       "To democratize high-quality education in AI, Data Analytics, and Software Engineering, making it accessible to learners worldwide.",
+  //   },
+  //   {
+  //     icon: <Users size={40} />,
+  //     title: "Expert Instructors",
+  //     description:
+  //       "Learn from industry professionals with years of real-world experience in their respective fields.",
+  //   },
+  //   {
+  //     icon: <Award size={40} />,
+  //     title: "Quality Content",
+  //     description:
+  //       "Comprehensive, up-to-date curriculum designed to prepare you for real-world challenges.",
+  //   },
+  //   {
+  //     icon: <TrendingUp size={40} />,
+  //     title: "Career Growth",
+  //     description:
+  //       "Gain the skills and credentials needed to advance your career in high-demand tech fields.",
+  //   },
+  // ];
+
   return (
     <>
-      <Header />
+      <ProgramLayout {...programLayoutProps}>
+            <ProgramCard specializations={data} />
+          </ProgramLayout>
+      {/* <Header />
       <main
         style={{
           paddingTop: "var(--spacing-12)",
@@ -142,7 +173,7 @@ export default function AboutPage() {
             </div>
           </div>
         </Container>
-      </main>
+      </main> */}
     </>
   );
 }

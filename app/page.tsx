@@ -21,6 +21,9 @@ import { Card } from "@/components/base/Card";
 import { Badge } from "@/components/base/Badge";
 import { ROUTES } from "@/constants/routes";
 import styles from "./page.module.css";
+import Image from "next/image";
+import { Footer } from "@/components/layout/Footer/Footer";
+const HeroImage = "/HeroImage.jpg";
 
 export default function Home() {
   const stats = [
@@ -98,22 +101,24 @@ export default function Home() {
 
   const specializations = [
     {
-      title: "Artificial Intelligence",
-      description: "Master AI, machine learning, and deep learning",
+      title: "Learning",
+      description:
+        "Hop on any of the specialization course and learn on your own terms",
       image:
         "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Brain size={40} />,
     },
     {
-      title: "Data Analytics",
-      description: "Transform data into actionable insights",
+      title: "Certification",
+      description:
+        "Get validated to receive validation recruiters are looking for",
       image:
         "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <BarChart3 size={40} />,
     },
     {
-      title: "Software Engineering",
-      description: "Build modern applications with best practices",
+      title: "Recruitment",
+      description: "Get access to the pool of certified professionals",
       image:
         "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Rocket size={40} />,
@@ -127,21 +132,33 @@ export default function Home() {
       <main>
         <section className={styles.hero}>
           <Container>
-            <Badge
+            <div className={styles.heroContent}>
+              {/* <Badge
               variant="primary"
               style={{ marginBottom: "var(--spacing-10)" }}
             >
               🎓 Trusted by 50,000+ Learners Worldwide
-            </Badge>
-            <Typography variant="h1" className={styles.heroTitle}>
-              Master AI, Data Analytics & Software Engineering
-            </Typography>
-            <Typography variant="bodyLarge" className={styles.heroDescription}>
+            </Badge> */}
+              <Typography variant="h1" className={styles.heroTitle}>
+                Get an accelerated skill, from Novis to Expertise. Get
+                certified, get validated
+              </Typography>
+              <Image
+                src={HeroImage}
+                alt={""}
+                width={400}
+                height={400}
+                style={{
+                  borderRadius: "50%", // makes it a perfect circle
+                  objectFit: "cover", // ensures the image fills nicely
+                }}
+              />
+              {/* <Typography variant="bodyLarge" className={styles.heroDescription}>
               Join Qucoon Tesa and transform your career with industry-leading
               education. Learn from experts, build real-world projects, and earn
               recognized certifications that employers value. Start free today.
-            </Typography>
-            <div className={styles.heroCta}>
+            </Typography> */}
+              {/* <div className={styles.heroCta}>
               <Link href={ROUTES.AUTH.REGISTER}>
                 <Button size="lg" leftIcon={<Rocket size={20} />}>
                   Start Learning Free
@@ -152,8 +169,8 @@ export default function Home() {
                   Browse Courses
                 </Button>
               </Link>
-            </div>
-            <div className={styles.stats}>
+            </div> */}
+              {/* <div className={styles.stats}>
               {stats.map((stat) => (
                 <div key={stat.label} className={styles.statItem}>
                   <Typography
@@ -168,11 +185,12 @@ export default function Home() {
                   </Typography>
                 </div>
               ))}
+            </div> */}
             </div>
           </Container>
         </section>
 
-        <section className={styles.features}>
+        {/* <section className={styles.features}>
           <Container>
             <div className={styles.sectionHeader}>
               <Typography variant="h2">
@@ -199,9 +217,9 @@ export default function Home() {
               ))}
             </div>
           </Container>
-        </section>
+        </section> */}
 
-        <section className={styles.howItWorks}>
+        {/* <section className={styles.howItWorks}>
           <Container>
             <div className={styles.sectionHeader}>
               <Typography variant="h2">How It Works</Typography>
@@ -221,16 +239,16 @@ export default function Home() {
               ))}
             </div>
           </Container>
-        </section>
+        </section> */}
 
         <section className={styles.specializations}>
           <Container>
-            <div className={styles.sectionHeader}>
+            {/* <div className={styles.sectionHeader}>
               <Typography variant="h2">Choose Your Path</Typography>
               <Typography variant="bodyLarge" color="muted">
                 Explore our specializations and start your learning journey
               </Typography>
-            </div>
+            </div> */}
             <div className={styles.specializationsGrid}>
               {specializations.map((spec) => (
                 <Card key={spec.title} hoverable>
@@ -249,7 +267,7 @@ export default function Home() {
                         gap: "var(--spacing-3)",
                       }}
                     >
-                      {spec.icon}
+                      {/* {spec.icon} */}
                       <Typography variant="h4">{spec.title}</Typography>
                     </div>
                     <Typography
@@ -260,44 +278,21 @@ export default function Home() {
                       {spec.description}
                     </Typography>
                   </Card.Body>
-                  <Card.Footer>
+                  {/* <Card.Footer>
                     <Link href={ROUTES.CATALOG.SPECIALIZATIONS}>
                       <Button variant="outline" fullWidth>
                         Learn More
                       </Button>
                     </Link>
-                  </Card.Footer>
+                  </Card.Footer> */}
                 </Card>
               ))}
             </div>
           </Container>
         </section>
-
-        <section className={styles.cta}>
-          <Container>
-            <div className={styles.ctaContent}>
-              <Typography
-                variant="h2"
-                style={{ color: "var(--color-neutral-0)" }}
-              >
-                Ready to Start Learning?
-              </Typography>
-              <Typography
-                variant="bodyLarge"
-                style={{ color: "var(--color-neutral-100)" }}
-              >
-                Join thousands of learners advancing their careers with Qucoon
-                Tesa
-              </Typography>
-              <Link href={ROUTES.AUTH.REGISTER}>
-                <Button variant="secondary" size="lg">
-                  Create Free Account
-                </Button>
-              </Link>
-            </div>
-          </Container>
-        </section>
       </main>
+
+      <Footer />
     </>
   );
 }

@@ -1,30 +1,52 @@
 "use client";
 
-import Link from "next/link";
-import { Brain, ChartBar as BarChart3, Rocket } from "lucide-react";
-import { Header } from "@/components/layout/Header";
-import { Container } from "@/components/layout/Container";
-import { Typography } from "@/components/base/Typography";
-import { Card } from "@/components/base/Card";
-import { Badge } from "@/components/base/Badge";
-import { Button } from "@/components/base/Button";
-import { Spinner } from "@/components/base/Spinner";
-import { useGetSpecializationsQuery } from "@/lib/api/catalogApi";
-import { ROUTES } from "@/constants/routes";
-import styles from "./page.module.css";
 
-const iconMap: Record<string, React.ReactNode> = {
-  "Artificial Intelligence": <Brain size={40} />,
-  "Data Analytics": <BarChart3 size={40} />,
-  "Software Engineering": <Rocket size={40} />,
-};
+import { useGetSpecializationsQuery } from "@/lib/api/catalogApi";
+// import { ROUTES } from "@/constants/routes";
+// import styles from "./page.module.css";
+import ProgramLayout, {
+  ProgramLayoutProps,
+} from "@/components/layout/ProgramLayout/ProgramLayout";
+import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
+
+// const iconMap: Record<string, React.ReactNode> = {
+//   "Artificial Intelligence": <Brain size={40} />,
+//   "Data Analytics": <BarChart3 size={40} />,
+//   "Software Engineering": <Rocket size={40} />,
+// };
 
 export default function SpecializationsPage() {
+  const programLayoutProps: ProgramLayoutProps = {
+    title: "Learning Program",
+    subtitle:
+      "Sign up to analyze reviews, benchmark against competitors, and uncover market trends that drive business growth.",
+  };
+
   const { data: specializations, isLoading } = useGetSpecializationsQuery();
+  const data = [
+    {
+      title: "Artificial Intelligence",
+      description: "Learn the foundations of AI and build smart systems.",
+      image: "/images/ai.jpg",
+    },
+    {
+      title: "Data Analytics",
+      description: "Master data visualization, SQL, and reporting tools.",
+      image: "/images/data.jpg",
+    },
+    {
+      title: "Software Engineering",
+      description: "Design and develop scalable web applications.",
+      image: "/images/software.jpg",
+    },
+  ];
 
   return (
     <>
-      <Header />
+      <ProgramLayout {...programLayoutProps}>
+        <ProgramCard specializations={data} />
+      </ProgramLayout>
+      {/* <Header />
       <main className={styles.container}>
         <Container>
           <div className={styles.header}>
@@ -78,7 +100,7 @@ export default function SpecializationsPage() {
             </div>
           )}
         </Container>
-      </main>
+      </main> */}
     </>
   );
 }

@@ -1,0 +1,23 @@
+.specializationsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  padding-top: var(--spacing-12);
+}
+
+@media (min-width: 768px) {
+  .specializationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.specializationCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.specializationImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}

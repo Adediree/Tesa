@@ -40,7 +40,7 @@
 }
 
 .variantPrimary {
-  background-color: var(--color-primary-600);
+  background-color: #1098f7;
   color: var(--color-neutral-0);
 }
 
@@ -115,7 +115,7 @@
 }
 
 .loading::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 16px;
