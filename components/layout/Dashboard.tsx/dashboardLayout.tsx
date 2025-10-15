@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { NavBar } from "./Sidebar";
 import { ROUTES } from "@/constants/routes";
 
@@ -12,10 +12,12 @@ export type DashboardLayoutProps = React.DetailedHTMLProps<
 const DashboardLayout = ({ children, ...props }: DashboardLayoutProps) => {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   // 🔑 Single active state for ALL navbars
   const [activeLink, setActiveLink] = useState<string>("");
   const [value, setValue] = useState("");
+  const currentCourseId = searchParams.get("courseId") || "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -24,11 +26,11 @@ const DashboardLayout = ({ children, ...props }: DashboardLayoutProps) => {
   const navLinks = [
     {
       name: "Home",
-      path: ROUTES.CATALOG.COURSES,
+      path: ROUTES.DASHBOARDHOME.HOME(currentCourseId),
     },
     {
       name: "Courses",
-      path: ROUTES.CATALOG.COURSES,
+      path: ROUTES.CATALOG.COURSE_DETAIL(currentCourseId),
     },
     {
       name: "Structure",
@@ -84,6 +86,35 @@ const DashboardLayout = ({ children, ...props }: DashboardLayoutProps) => {
     //   { name: "API Access", path: "", icon: <ApiAccessIcon /> },
     //   { name: "Billing & plan", path: "", icon: <BillingIcon /> },
   ];
+
+  useEffect(() => {
+    const current = navLinks.find((link) => {
+      // Match all course detail routes like /courses/cloud-engineering
+      if (
+        link.name === "Courses" &&
+        pathname.startsWith(`/courses/${currentCourseId}`)
+      )
+        return true;
+
+      // Match all dashboard home routes like /dashboard-home?courseId=cloud-engineering
+      if (link.name === "Home" && pathname.startsWith("/dashboard-home"))
+        return true;
+
+      // Fallback for any exact matches
+      return pathname === link.path;
+    });
+
+    if (current) {
+      setActiveLink(current.name);
+    } else {
+      // default to first link if nothing matches
+      setActiveLink(navLinks[0].name);
+      const firstPath = navLinks[0].path;
+      if (typeof firstPath === "string") {
+        router.push(firstPath);
+      }
+    }
+  }, [pathname, router]);
 
   return (
     <div

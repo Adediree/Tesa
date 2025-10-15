@@ -7,6 +7,8 @@ import ProgramLayout, {
   ProgramLayoutProps,
 } from "@/components/layout/ProgramLayout/ProgramLayout";
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
+import styles from "./page.module.css";
+
 
 export default function AboutPage() {
   const programLayoutProps: ProgramLayoutProps = {
@@ -21,21 +23,21 @@ export default function AboutPage() {
       id: "artificial",
       title: "Artificial Intelligence",
       description: "Learn the foundations of AI and build smart systems.",
-      image: "/images/ai.jpg",
+      image: "/ai-image.jpg",
     },
     {
       id: "artificial",
 
       title: "Data Analytics",
       description: "Master data visualization, SQL, and reporting tools.",
-      image: "/images/data.jpg",
+      image: "/data-analytics-image.jpg",
     },
     {
       id: "artificial",
 
       title: "Software Engineering",
       description: "Design and develop scalable web applications.",
-      image: "/images/software.jpg",
+      image: "/softwareImage.jpg",
     },
   ];
 
@@ -68,10 +70,11 @@ export default function AboutPage() {
 
   return (
     <>
-      <ProgramLayout {...programLayoutProps}>
-        <ProgramCard specializations={data} />
-      </ProgramLayout>
-      {/* <Header />
+      <main className={styles.mainContainer}>
+        <ProgramLayout {...programLayoutProps}>
+          <ProgramCard specializations={data} />
+        </ProgramLayout>
+        {/* <Header />
       <main
         style={{
           paddingTop: "var(--spacing-12)",
@@ -180,6 +183,7 @@ export default function AboutPage() {
           </div>
         </Container>
       </main> */}
+      </main>
     </>
   );
 }

@@ -45,10 +45,10 @@ const ProgramLayout = ({
       <main className={styles.body}>
         <Container>
           <div>
-            <div>
-              <Typography>{title}</Typography>
-              <Typography>{subtitle}</Typography>
-              <Typography>{text}</Typography>
+            <div className={styles.textDiv}>
+              <Typography className={styles.title}>{title}</Typography>
+              <Typography className={styles.subtitle}>{subtitle}</Typography>
+              <Typography className={styles.text}>{text}</Typography>
             </div>
             {children}
             {/* <ProgramCard specializations={specializations} /> */}

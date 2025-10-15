@@ -7,6 +7,8 @@ import ProgramLayout, {
 } from "@/components/layout/ProgramLayout/ProgramLayout";
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 import { ROUTES } from "@/constants/routes";
+import styles from "./page.module.css";
+
 
 export default function SpecializationsPage() {
   const router = useRouter();
@@ -24,19 +26,19 @@ export default function SpecializationsPage() {
       id: "tesa",
       title: "Tesa",
       description: "Learn the foundations of AI and build smart systems.",
-      image: "/images/ai.jpg",
+      image: "/tesa.jpg",
     },
     {
-      id: "data-analytics",
-      title: "Data Analytics",
+      id: "qsa",
+      title: "Startup Accelerator",
       description: "Master data visualization, SQL, and reporting tools.",
-      image: "/images/data.jpg",
+      image: "QSAimage.jpg",
     },
     {
-      id: "software-engineering",
-      title: "Software Engineering",
+      id: "empowa",
+      title: "Empowa",
       description: "Design and develop scalable web applications.",
-      image: "/images/software.jpg",
+      image: "empowa.jpg",
     },
   ];
 
@@ -46,17 +48,20 @@ export default function SpecializationsPage() {
   };
 
   return (
-    <ProgramLayout {...programLayoutProps}>
-      <ProgramCard
-        specializations={data}
-        showButton={true}
-        buttonText="Explore Course"
-        onButtonClick={handleNavigateToSpecialization} // ✅ added this
-      />
-    </ProgramLayout>
+    <main className={styles.mainContainer}>
+      <ProgramLayout {...programLayoutProps}>
+        <ProgramCard
+          specializations={data}
+          showButton={true}
+          buttonText="Explore Course"
+          onButtonClick={handleNavigateToSpecialization} // ✅ added this
+        />
+      </ProgramLayout>
+    </main>
   );
 }
-      {/* <Header />
+{
+  /* <Header />
       <main className={styles.container}>
         <Container>
           <div className={styles.header}>
@@ -110,5 +115,5 @@ export default function SpecializationsPage() {
             </div>
           )}
         </Container>
-      </main> */}
-    
+      </main> */
+}

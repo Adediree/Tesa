@@ -1,12 +1,10 @@
 .cta {
-  padding-top: var(--spacing-20);
-  padding-bottom: var(--spacing-20);
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
   padding-left: var(--spacing-12);
   padding-right: var(--spacing-12);
   text-align: center;
-  background-color: #1098f7;
-  color: var(--color-neutral-0);
-}
+ background: linear-gradient(90deg, #1098f7, #0052d4, #4364f7, #6fb1fc);}
 
 .ctaContent {
   display: flex;

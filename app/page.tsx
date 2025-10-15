@@ -23,7 +23,7 @@ import { ROUTES } from "@/constants/routes";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { Footer } from "@/components/layout/Footer/Footer";
-const HeroImage = "/HeroImage.jpg";
+const HeroImage = "/hero-image.jpg";
 
 export default function Home() {
   const stats = [
@@ -129,7 +129,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main>
+      <main className={styles.mainContainer}>
         <section className={styles.hero}>
           <Container>
             <div className={styles.heroContent}>
@@ -146,11 +146,12 @@ export default function Home() {
               <Image
                 src={HeroImage}
                 alt={""}
-                width={400}
-                height={400}
+                width={450}
+                height={350}
                 style={{
-                  borderRadius: "50%", // makes it a perfect circle
-                  objectFit: "cover", // ensures the image fills nicely
+                  borderRadius: "8px",
+                  // borderRadius: "50%",
+                  // objectFit: "cover",
                 }}
               />
               {/* <Typography variant="bodyLarge" className={styles.heroDescription}>

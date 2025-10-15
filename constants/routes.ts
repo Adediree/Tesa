@@ -38,6 +38,8 @@ export const ROUTES = {
     PROFILE: "/dashboard/profile",
   },
 
+  DASHBOARDHOME: { HOME: (id: string) => `/dashboard-home?courseId=${id}` },
+
   ADMIN: {
     HOME: "/admin",
     COURSES: "/admin/courses",

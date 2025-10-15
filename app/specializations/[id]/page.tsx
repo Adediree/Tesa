@@ -7,6 +7,7 @@ import ProgramLayout, {
 } from "@/components/layout/ProgramLayout/ProgramLayout";
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 import { ROUTES } from "@/constants/routes";
+import styles from "./page.module.css";
 
 export default function SpecializationDetailPage() {
   const router = useRouter();
@@ -25,22 +26,22 @@ export default function SpecializationDetailPage() {
     {
       id: "cloud-engineering",
       title: "Cloud Engineering",
-      description: "Learn the foundations of cloud computing and infrastructure.",
-      image: "/images/ai.jpg",
+      description:
+        "Learn the foundations of cloud computing and infrastructure.",
+      image: "/cloudEngineering.jpg",
     },
     {
       id: "cloud-solutions-architecture",
       title: "Cloud Solutions Architecture",
-      description:
-        "Design scalable, secure, and cost-effective cloud systems.",
-      image: "/images/data.jpg",
+      description: "Design scalable, secure, and cost-effective cloud systems.",
+      image: "/CASimage.jpg",
     },
     {
       id: "software-engineering",
       title: "Software Engineering",
       description:
         "Design and develop scalable web applications with modern stacks.",
-      image: "/images/software.jpg",
+      image: "/softwareImage.jpg",
     },
   ];
 
@@ -49,17 +50,20 @@ export default function SpecializationDetailPage() {
   };
 
   return (
-    <ProgramLayout {...programLayoutProps}>
-      <ProgramCard
-        specializations={data}
-        showButton={true}
-        buttonText="View Course"
-        onButtonClick={handleNavigateToCourse} // ✅ pass handler
-      />
-    </ProgramLayout>
+    <main className={styles.mainContainer}>
+      <ProgramLayout {...programLayoutProps}>
+        <ProgramCard
+          specializations={data}
+          showButton={true}
+          buttonText="View Course"
+          onButtonClick={handleNavigateToCourse} // ✅ pass handler
+        />
+      </ProgramLayout>
+    </main>
   );
 }
-      {/* <Header />
+{
+  /* <Header />
       <main className={styles.container}>
         <Container>
           <div className={styles.header}>
@@ -113,8 +117,8 @@ export default function SpecializationDetailPage() {
             </div>
           )}
         </Container>
-      </main> */}
-  
+      </main> */
+}
 
 // "use client";
 
