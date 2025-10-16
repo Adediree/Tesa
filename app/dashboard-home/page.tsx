@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Typography } from "@/components/base/Typography";
 import DashboardLayout from "@/components/layout/Dashboard.tsx/dashboardLayout";
 import { ModernSelect, ModernSelectOption } from "qucoon-components";
-import { Courses } from "@/app/mockdata.tsx/page";
+import { Courses } from "@/app/mockdata/page";
 import styles from "../courses/[id]/page.module.css";
 
 export default function DashboardHome() {

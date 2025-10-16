@@ -20,7 +20,7 @@ import { Button } from "@/components/base/Button";
 import styles from "./page.module.css";
 import DashboardLayout from "@/components/layout/Dashboard.tsx/dashboardLayout";
 import { ModernSelect, ModernSelectOption } from "qucoon-components";
-import { Courses } from "@/app/mockdata.tsx/page";
+import { Courses } from "@/app/mockdata/page";
 
 const contentIconMap: Record<string, React.ReactNode> = {
   video: <Video size={16} />,
@@ -28,7 +28,6 @@ const contentIconMap: Record<string, React.ReactNode> = {
   live: <UsersIcon size={16} />,
   reading: <FileText size={16} />,
 };
-
 
 export default function CourseDetailPage({
   params,
@@ -95,7 +94,7 @@ export default function CourseDetailPage({
 
   return (
     <>
-        <Header />
+      <Header />
       <div className={styles.overallContainer}>
         <div
           style={{
