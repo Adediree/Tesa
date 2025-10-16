@@ -20,7 +20,7 @@ import { Button } from "@/components/base/Button";
 import styles from "./page.module.css";
 import DashboardLayout from "@/components/layout/Dashboard.tsx/dashboardLayout";
 import { ModernSelect, ModernSelectOption } from "qucoon-components";
-import { Courses } from "@/app/mockdata/page";
+import { Courses } from "@/components/mockData/page";
 
 const contentIconMap: Record<string, React.ReactNode> = {
   video: <Video size={16} />,
