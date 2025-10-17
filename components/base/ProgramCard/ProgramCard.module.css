@@ -1,8 +1,34 @@
-.specializationsGrid {
+/* .specializationsGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-6);
   padding-top: var(--spacing-12);
+} */
+
+.specializationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  padding-top: var(--spacing-12);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.specializationImage {
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Card } from "@/components/base/Card";
 import { Typography } from "@/components/base/Typography";
 import { Button } from "@/components/base/Button";
@@ -31,12 +32,17 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
     <div className={styles.specializationsGrid}>
       {specializations.map((spec) => (
         <Card key={spec.title} hoverable>
-          <Card.Header noPadding>
-            <img
-              src={spec.image}
-              alt={spec.title}
-              className={styles.specializationImage}
-            />
+          <Card.Header noPadding className={styles.imageWrapper}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={spec.image}
+                alt={spec.title}
+                fill
+                className={styles.specializationImage}
+                sizes="(max-width: 768px) 100vw, 400px"
+                priority
+              />
+            </div>
           </Card.Header>
 
           <Card.Body>
