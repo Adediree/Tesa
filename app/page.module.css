@@ -45,7 +45,8 @@
   /* margin: auto !important; */
   /* max-width: 400px !important; */
   font-size: 4rem;
-  width: 600px;
+  flex: 1;
+  max-width: 600px;
   margin-bottom: var(--spacing-10);
   padding-bottom: var(--spacing-1);
   background: linear-gradient(90deg, #1098f7, #0052d4, #4364f7, #6fb1fc);
