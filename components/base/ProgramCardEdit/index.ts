@@ -1,1 +1,1 @@
-export { Card } from './Card';
+export { ProgramCardEdit } from "./Card";
