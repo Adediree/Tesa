@@ -4,7 +4,7 @@
 }
 
 .h1 {
-  font-size: var(--font-size-4xl);
+  font-size: 4rem;
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
