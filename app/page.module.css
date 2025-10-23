@@ -44,7 +44,7 @@
 .heroTitle {
   /* margin: auto !important; */
   /* max-width: 400px !important; */
-  font-size: 4rem;
+  font-size: 3rem;
   flex: 1;
   max-width: 600px;
   margin-bottom: var(--spacing-10);
