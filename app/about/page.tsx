@@ -9,7 +9,6 @@ import ProgramLayout, {
 import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 import styles from "./page.module.css";
 
-
 export default function AboutPage() {
   const programLayoutProps: ProgramLayoutProps = {
     title: "Certifications",
@@ -23,21 +22,28 @@ export default function AboutPage() {
       id: "artificial",
       title: "Artificial Intelligence",
       description: "Learn the foundations of AI and build smart systems.",
-      image: "/ai-image.jpg",
+      // image: "/ai-image.jpg",
     },
     {
       id: "artificial",
 
       title: "Data Analytics",
       description: "Master data visualization, SQL, and reporting tools.",
-      image: "/data-analytics-image.jpg",
+      // image: "/data-analytics-image.jpg",
     },
     {
       id: "artificial",
 
       title: "Software Engineering",
       description: "Design and develop scalable web applications.",
-      image: "/softwareImage.jpg",
+      // image: "/softwareImage.jpg",
+    },
+    {
+      id: "artificial",
+
+      title: "Software Engineering",
+      description: "Design and develop scalable web applications.",
+      // image: "/softwareImage.jpg",
     },
   ];
 
@@ -72,7 +78,11 @@ export default function AboutPage() {
     <>
       <main className={styles.mainContainer}>
         <ProgramLayout {...programLayoutProps}>
-          <ProgramCard specializations={data} />
+          <ProgramCard
+            specializations={data}
+            showButton={true}
+            buttonText="More"
+          />
         </ProgramLayout>
         {/* <Header />
       <main

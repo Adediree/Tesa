@@ -7,65 +7,124 @@ import { Card } from "@/components/base/Card";
 import { Button } from "@/components/base/Button";
 import { Badge } from "@/components/base/Badge";
 import { ROUTES } from "@/constants/routes";
+import styles from "./page.module.css";
+import ProgramLayout, {
+  ProgramLayoutProps,
+} from "@/components/layout/ProgramLayout/ProgramLayout";
+import RecruiterCard from "@/components/base/RecruiterCard/RecruiterCard";
 
 export default function PricingPage() {
-  const plans = [
+  const programLayoutProps: ProgramLayoutProps = {
+    title: "Certifications",
+    subtitle:
+      "Validate your skillset with Univaciti certification courses. Specializations are in cloud engineering, cloud solutions architecture, software engineering, AI Solution",
+    text: "Select a specialization to view the details",
+  };
+
+  const data = [
     {
-      name: "Free",
-      price: "$0",
-      period: "forever",
-      description: "Perfect for getting started",
-      features: [
-        "Access to 3 beginner courses",
-        "Basic course materials",
-        "Community forum access",
-        "Course completion certificates",
-      ],
-      cta: "Get Started",
-      href: ROUTES.AUTH.REGISTER,
-      popular: false,
+      id: "artificial",
+      // title: "Artificial Intelligence",
+      // description: "Learn the foundations of AI and build smart systems.",
+      image: "/pepsi-logo.jpg",
     },
     {
-      name: "Premium",
-      price: "$29",
-      period: "per month",
-      description: "For serious learners",
-      features: [
-        "Unlimited access to all courses",
-        "All learning materials & labs",
-        "Live class participation",
-        "Priority support",
-        "Pathway completion certificates",
-        "Career guidance sessions",
-        "Exclusive webinars",
-      ],
-      cta: "Start Learning",
-      href: ROUTES.AUTH.REGISTER,
-      popular: true,
+      id: "artificial",
+
+      // title: "Data Analytics",
+      // description: "Master data visualization, SQL, and reporting tools.",
+      image: "/union-bank.jpg",
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "contact us",
-      description: "For teams and organizations",
-      features: [
-        "Everything in Premium",
-        "Dedicated account manager",
-        "Custom learning paths",
-        "Team analytics dashboard",
-        "Bulk licenses",
-        "API access",
-        "White-label options",
-      ],
-      cta: "Contact Sales",
-      href: ROUTES.MARKETING.CONTACT,
-      popular: false,
+      id: "artificial",
+
+      // title: "Software Engineering",
+      // description: "Design and develop scalable web applications.",
+      image: "/stanbic.jpg",
+    },
+    {
+      id: "artificial",
+
+      // title: "Software Engineering",
+      // description: "Design and develop scalable web applications.",
+      image: "/polaris.jpg",
+    },
+    {
+      id: "artificial",
+
+      // title: "Software Engineering",
+      // description: "Design and develop scalable web applications.",
+      image: "/firstbank.jpg",
     },
   ];
 
+  // const plans = [
+  //   {
+  //     name: "Free",
+  //     price: "$0",
+  //     period: "forever",
+  //     description: "Perfect for getting started",
+  //     features: [
+  //       "Access to 3 beginner courses",
+  //       "Basic course materials",
+  //       "Community forum access",
+  //       "Course completion certificates",
+  //     ],
+  //     cta: "Get Started",
+  //     href: ROUTES.AUTH.REGISTER,
+  //     popular: false,
+  //   },
+  //   {
+  //     name: "Premium",
+  //     price: "$29",
+  //     period: "per month",
+  //     description: "For serious learners",
+  //     features: [
+  //       "Unlimited access to all courses",
+  //       "All learning materials & labs",
+  //       "Live class participation",
+  //       "Priority support",
+  //       "Pathway completion certificates",
+  //       "Career guidance sessions",
+  //       "Exclusive webinars",
+  //     ],
+  //     cta: "Start Learning",
+  //     href: ROUTES.AUTH.REGISTER,
+  //     popular: true,
+  //   },
+  //   {
+  //     name: "Enterprise",
+  //     price: "Custom",
+  //     period: "contact us",
+  //     description: "For teams and organizations",
+  //     features: [
+  //       "Everything in Premium",
+  //       "Dedicated account manager",
+  //       "Custom learning paths",
+  //       "Team analytics dashboard",
+  //       "Bulk licenses",
+  //       "API access",
+  //       "White-label options",
+  //     ],
+  //     cta: "Contact Sales",
+  //     href: ROUTES.MARKETING.CONTACT,
+  //     popular: false,
+  //   },
+  // ];
+
   return (
     <>
-      <Header />
+      <main className={styles.mainContainer}>
+        <ProgramLayout {...programLayoutProps}>
+          <RecruiterCard
+            specializations={data}
+            showButton={true}
+            buttonText="Register"
+          />
+        </ProgramLayout>
+      </main>
+
+      {/* <Header />
       <main
         style={{
           paddingTop: "var(--spacing-12)",
@@ -189,7 +248,7 @@ export default function PricingPage() {
             ))}
           </div>
         </Container>
-      </main>
+      </main> */}
     </>
   );
 }

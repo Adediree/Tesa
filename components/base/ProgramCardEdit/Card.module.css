@@ -1,10 +1,14 @@
 .card {
-  /* background-color: var(--color-neutral-0); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0b4a6f;
   /* border: 1px solid var(--color-neutral-200); */
-  /* border-radius: var(--radius-lg); */
-  /* box-shadow: var(--shadow-sm); */
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   overflow: hidden;
+  width: 250px;
 }
 
 .cardHoverable:hover {
@@ -23,10 +27,13 @@
 
 .body {
   padding: var(--spacing-6);
+  padding-top: 0px;
 }
 
 .footer {
   padding: var(--spacing-6);
+  padding-top: 0px;
+
   /* border-top: 1px solid var(--color-neutral-200); */
   /* background-color: var(--color-neutral-50); */
 }

@@ -3,23 +3,23 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Card } from "@/components/base/Card";
 import { Typography } from "@/components/base/Typography";
 import { Button } from "@/components/base/Button";
 import styles from "./ProgramCard.module.css";
+import { ProgramCardEdit } from "../ProgramCardEdit/Card";
 
 interface Program {
   id?: string;
   title: string;
   description: string;
-  image: string;
+  image?: string; // 👈 made optional
 }
 
 interface ProgramCardProps {
   specializations: Program[];
   showButton?: boolean;
   buttonText?: string;
-  onButtonClick?: (id: string) => void; // 👈 optional callback
+  onButtonClick?: (id: string) => void;
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
@@ -31,53 +31,56 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   return (
     <div className={styles.specializationsGrid}>
       {specializations.map((spec) => (
-        <Card key={spec.title} hoverable>
-          <Card.Header noPadding className={styles.imageWrapper}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={spec.image}
-                alt={spec.title}
-                fill
-                className={styles.specializationImage}
-                sizes="(max-width: 768px) 100vw, 400px"
-                priority
-              />
-            </div>
-          </Card.Header>
-
-          <Card.Body>
+        <ProgramCardEdit key={spec.title} hoverable>
+          <ProgramCardEdit.Header noPadding className={styles.imageWrapper}>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "var(--spacing-3)",
+                paddingTop: "var(--spacing-3)",
+                paddingBottom: "var(--spacing-2)",
               }}
             >
               <Typography variant="h4">{spec.title}</Typography>
             </div>
 
+            {/* ✅ Only show image if provided */}
+            {spec.image && (
+              <div className={styles.imageContainer}>
+                <Image
+                  src={spec.image}
+                  alt={spec.title}
+                  fill
+                  className={styles.specializationImage}
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                />
+              </div>
+            )}
+          </ProgramCardEdit.Header>
+
+          <ProgramCardEdit.Body>
             <Typography
               variant="body"
-              color="muted"
               style={{ marginTop: "var(--spacing-3)" }}
             >
               {spec.description}
             </Typography>
-          </Card.Body>
+          </ProgramCardEdit.Body>
 
-          {/* 👇 Optional button section */}
           {showButton && (
-            <Card.Footer>
+            <ProgramCardEdit.Footer className={styles.cardFooter}>
               <Button
-                variant="outline"
-                fullWidth
-                onClick={() => onButtonClick?.(spec.id!)} // ✅ triggers callback if provided
+                variant="primary"
+                onClick={() => onButtonClick?.(spec.id!)}
+                style={{ marginLeft: "auto" }}
               >
                 {buttonText}
               </Button>
-            </Card.Footer>
+            </ProgramCardEdit.Footer>
           )}
-        </Card>
+        </ProgramCardEdit>
       ))}
     </div>
   );

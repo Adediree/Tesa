@@ -9,14 +9,13 @@ import ProgramCard from "@/components/base/ProgramCard/ProgramCard";
 import { ROUTES } from "@/constants/routes";
 import styles from "./page.module.css";
 
-
 export default function SpecializationsPage() {
   const router = useRouter();
 
   const programLayoutProps: ProgramLayoutProps = {
     title: "Learning Program",
     subtitle:
-      "Sign up to analyze reviews, benchmark against competitors, and uncover market trends that drive business growth.",
+      "Choose from the pool of Univaciti programs and start learning when and how you choose to",
   };
 
   const { data: specializations, isLoading } = useGetSpecializationsQuery();
@@ -26,13 +25,25 @@ export default function SpecializationsPage() {
       id: "tesa",
       title: "Tesa",
       description: "Learn the foundations of AI and build smart systems.",
-      image: "/tesa.jpg",
+      image: "/TesaImage.jpg",
     },
     {
       id: "qsa",
       title: "Startup Accelerator",
       description: "Master data visualization, SQL, and reporting tools.",
-      image: "QSAimage.jpg",
+      image: "QSAImage.jpg",
+    },
+    {
+      id: "empowa",
+      title: "Empowa",
+      description: "Design and develop scalable web applications.",
+      image: "Empowa.jpg",
+    },
+    {
+      id: "empowa",
+      title: "Empowa",
+      description: "Design and develop scalable web applications.",
+      image: "empowa.jpg",
     },
     {
       id: "empowa",
@@ -53,7 +64,7 @@ export default function SpecializationsPage() {
         <ProgramCard
           specializations={data}
           showButton={true}
-          buttonText="Explore Course"
+          buttonText="More"
           onButtonClick={handleNavigateToSpecialization} // ✅ added this
         />
       </ProgramLayout>

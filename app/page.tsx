@@ -23,7 +23,7 @@ import { ROUTES } from "@/constants/routes";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { Footer } from "@/components/layout/Footer/Footer";
-const HeroImage = "/hero-image.jpg";
+const HeroImage = "/hero.jpg";
 
 export default function Home() {
   const stats = [
@@ -252,14 +252,14 @@ export default function Home() {
             </div> */}
             <div className={styles.specializationsGrid}>
               {specializations.map((spec) => (
-                <Card key={spec.title} hoverable>
-                  <Card.Header noPadding>
+                <Card key={spec.title} hoverable className={styles.card}>
+                  {/* <Card.Header noPadding>
                     <img
                       src={spec.image}
                       alt={spec.title}
                       className={styles.specializationImage}
                     />
-                  </Card.Header>
+                  </Card.Header> */}
                   <Card.Body>
                     <div
                       style={{
@@ -279,13 +279,13 @@ export default function Home() {
                       {spec.description}
                     </Typography>
                   </Card.Body>
-                  {/* <Card.Footer>
+                  <Card.Footer>
                     <Link href={ROUTES.CATALOG.SPECIALIZATIONS}>
                       <Button variant="outline" fullWidth>
-                        Learn More
+                        Explore
                       </Button>
                     </Link>
-                  </Card.Footer> */}
+                  </Card.Footer>
                 </Card>
               ))}
             </div>

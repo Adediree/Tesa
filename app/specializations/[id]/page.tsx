@@ -28,20 +28,20 @@ export default function SpecializationDetailPage() {
       title: "Cloud Engineering",
       description:
         "Learn the foundations of cloud computing and infrastructure.",
-      image: "/cloudEngineering.jpg",
+      // image: "/cloudEngineering.jpg",
     },
     {
       id: "cloud-solutions-architecture",
       title: "Cloud Solutions Architecture",
       description: "Design scalable, secure, and cost-effective cloud systems.",
-      image: "/CASimage.jpg",
+      // image: "/CASimage.jpg",
     },
     {
       id: "software-engineering",
       title: "Software Engineering",
       description:
         "Design and develop scalable web applications with modern stacks.",
-      image: "/softwareImage.jpg",
+      // image: "/softwareImage.jpg",
     },
   ];
 
