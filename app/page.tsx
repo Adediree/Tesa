@@ -149,7 +149,7 @@ export default function Home() {
                 width={450}
                 height={350}
                 style={{
-                  borderRadius: "8px",
+                  borderRadius: "16px",
                   // borderRadius: "50%",
                   // objectFit: "cover",
                 }}
@@ -252,7 +252,7 @@ export default function Home() {
             </div> */}
             <div className={styles.specializationsGrid}>
               {specializations.map((spec) => (
-                <Card key={spec.title} hoverable className={styles.card}>
+                <Card key={spec.title} className={styles.card}>
                   {/* <Card.Header noPadding>
                     <img
                       src={spec.image}
