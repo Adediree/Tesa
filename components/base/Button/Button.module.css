@@ -58,7 +58,7 @@
 }
 
 .variantSecondary:hover:not(:disabled) {
-  background-color: var(--color-secondary-700);
+  background-color: blue;
 }
 
 .variantSecondary:active:not(:disabled) {
