@@ -15,10 +15,10 @@ import RecruiterCard from "@/components/base/RecruiterCard/RecruiterCard";
 
 export default function PricingPage() {
   const programLayoutProps: ProgramLayoutProps = {
-    title: "Certifications",
+    title: "Recruiters",
     subtitle:
-      "Validate your skillset with Univaciti certification courses. Specializations are in cloud engineering, cloud solutions architecture, software engineering, AI Solution",
-    text: "Select a specialization to view the details",
+      "Join the growing list of recruiters, have access to the pool of exceptional Univaciti graduates, get alerted by new additions to the pool. Track talents of interest, track skills of interest",
+    // text: "Select a specialization to view the details",
   };
 
   const data = [
