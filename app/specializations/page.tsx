@@ -31,25 +31,25 @@ export default function SpecializationsPage() {
       id: "qsa",
       title: "Startup Accelerator",
       description: "Master data visualization, SQL, and reporting tools.",
-      image: "QSAImage.jpg",
+      image: "/QSAImage.jpg",
     },
     {
       id: "empowa",
       title: "Empowa",
       description: "Design and develop scalable web applications.",
-      image: "Empowa.jpg",
+      image: "/Empowa.jpg",
     },
     {
       id: "empowa",
       title: "Empowa",
       description: "Design and develop scalable web applications.",
-      image: "empowa.jpg",
+      image: "/Empowa.jpg",
     },
     {
       id: "empowa",
       title: "Empowa",
       description: "Design and develop scalable web applications.",
-      image: "empowa.jpg",
+      image: "/Empowa.jpg",
     },
   ];
 
