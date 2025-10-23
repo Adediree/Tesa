@@ -25,13 +25,14 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
-  color: black;
+  color: white;
 }
 
 .h5 {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
+  color: black;
 }
 
 .h6 {

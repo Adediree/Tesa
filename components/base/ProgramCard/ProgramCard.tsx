@@ -73,6 +73,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
             <ProgramCardEdit.Footer className={styles.cardFooter}>
               <Button
                 variant="primary"
+                size="sm"
                 onClick={() => onButtonClick?.(spec.id!)}
                 style={{ marginLeft: "auto" }}
               >

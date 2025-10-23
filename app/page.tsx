@@ -149,7 +149,7 @@ export default function Home() {
                 width={450}
                 height={350}
                 style={{
-                  borderRadius: "16px",
+                  borderRadius: "50px",
                   // borderRadius: "50%",
                   // objectFit: "cover",
                 }}
@@ -269,7 +269,7 @@ export default function Home() {
                       }}
                     >
                       {/* {spec.icon} */}
-                      <Typography variant="h4">{spec.title}</Typography>
+                      <Typography variant="h5">{spec.title}</Typography>
                     </div>
                     <Typography
                       variant="body"
