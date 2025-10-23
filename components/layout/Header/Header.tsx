@@ -19,7 +19,7 @@ export function Header() {
   const navLinks = [
     { href: ROUTES.CATALOG.SPECIALIZATIONS, label: "Programmes" },
     { href: ROUTES.MARKETING.ABOUT, label: "Certifications" },
-    { href: ROUTES.MARKETING.PRICING, label: "Recruitment" },
+    { href: ROUTES.MARKETING.PRICING, label: "Recruiters" },
     { href: ROUTES.MARKETING.CONTACT, label: "Community" },
   ];
 
