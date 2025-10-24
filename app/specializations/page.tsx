@@ -24,25 +24,29 @@ export default function SpecializationsPage() {
     {
       id: "tesa",
       title: "Tesa",
-      description: "Learn the foundations of AI and build smart systems.",
+      description:
+        "For beginners who need intensive courses in specialized skills.",
       image: "/TesaImage.jpg",
     },
     {
       id: "qsa",
       title: "Startup Accelerator",
-      description: "Master data visualization, SQL, and reporting tools.",
+      description:
+        "For beginners who need intensive courses in specialized skills.",
       image: "/QSAImage.png",
     },
     {
       id: "empowa",
       title: "Empowa",
-      description: "Design and develop scalable web applications.",
+      description:
+        "For beginners who need intensive courses in specialized skills.",
       image: "/EmpowaImage.png",
     },
     {
       id: "empowa",
       title: "Empowa",
-      description: "Design and develop scalable web applications.",
+      description:
+        "For beginners who need intensive courses in specialized skills.",
       image: "/EmpowaImage.png",
     },
   ];

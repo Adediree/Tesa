@@ -38,6 +38,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
                 display: "flex",
                 alignItems: "center",
                 gap: "var(--spacing-3)",
+                width: "120px",
                 paddingTop: "var(--spacing-3)",
                 paddingBottom: "var(--spacing-2)",
               }}

@@ -1,5 +1,5 @@
 .body {
-  padding-top: var(--spacing-24);
+  padding-top: var(--spacing-12);
   padding-bottom: var(--spacing-12);
   padding-left: var(--spacing-12);
   padding-right: var(--spacing-12);
@@ -16,7 +16,8 @@
 
 .title {
   font-size: 2.5rem;
-  font-family: Poppins, sans-serif;
+  font-family: "Biome-Regular";
+  font-weight: 500;
   padding-bottom: var(--spacing-1);
   color: #1098f7;
   line-height: 1.2;
@@ -25,8 +26,9 @@
 .subtitle,
 .text {
   line-height: 1.6;
-  font-size: 1rem;
-  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  font-family: "Biome-Regular";
+  font-weight: 500;
   width: 100%;
   max-width: 600px;
   color: #333;

@@ -40,12 +40,12 @@
 }
 
 .variantPrimary {
-  background-color: #1098f7;
+  background-color: #0097da;
   color: var(--color-neutral-0);
 }
 
 .variantPrimary:hover:not(:disabled) {
-  background-color: var(--color-primary-700);
+  background-color: blue;
 }
 
 .variantPrimary:active:not(:disabled) {

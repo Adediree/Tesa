@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-8);
-  padding-top: var(--spacing-12);
+  padding-top: var(--spacing-6);
   justify-content: flex-start;
 }
 
@@ -20,7 +20,7 @@
   width: 100%;
   height: fit-content;
   padding: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-top-left-radius: var(--radius-lg);
   border-top-right-radius: var(--radius-lg);
   /* border: 1px solid red; */
@@ -28,9 +28,11 @@
 
 .imageContainer {
   margin-left: auto;
-  position: relative;
-  width: 150px;
-  height: 150px;
+  position: absolute;
+  top: var(--spacing-3); /* adjust for spacing */
+  right: var(--spacing-3);
+  width: 100px;
+  height: 100px;
 }
 
 .specializationImage {
